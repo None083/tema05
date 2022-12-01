@@ -11,10 +11,17 @@ package ut05estructurasdealmacenamiento;
 public class UT0501 {
 
     /**
-     * @param args the command line arguments
+     * 
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Escribe un programa que muestre cada elemento de un array de 
+        //enteros y sume todos sus elementos. Instancia e inicializa el array 
+        //en el programa, sin leer nada por teclado, con los siguientes 
+        //valores {1, 2, 3, 4, 5, 6}.
+        
+        
+        
     }
     
 }

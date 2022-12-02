@@ -21,8 +21,12 @@ public class UT0501 {
         //valores {1, 2, 3, 4, 5, 6}.
         
         int[] numeros = {1, 2, 3, 4, 5, 6};
-        int sumaNumeros;
-        
+        int sumaNumeros = 0;
+        for(int i = 0; i < numeros.length; i++){
+            sumaNumeros += numeros[i];
+            System.out.println(numeros[i]);
+        }
+        System.out.println("Suma: " + sumaNumeros);
     }
     
 }

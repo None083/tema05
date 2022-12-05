@@ -18,10 +18,14 @@ public class UT0503 {
      */
     public static void main(String[] args) {
 
+        //creamos el arry de 20 numeros decimales
         double[] numeros = new double[20];
+        //rellenamos con 7.5 los 20 huecos
         Arrays.fill(numeros, 7.5);
+        //creo una copia del array
         double[] copia1 = Arrays.copyOf(numeros, 20);
 
+        //
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Array numeros: " + numeros[i]);
         }

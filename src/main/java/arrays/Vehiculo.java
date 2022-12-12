@@ -12,7 +12,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  * @author noelia
  */
 public class Vehiculo {
-    
+
     private String bastidor;
     private String matricula;
     private Color color;
@@ -22,8 +22,8 @@ public class Vehiculo {
 
     public Vehiculo() {
         this.bastidor = RandomStringUtils.randomAlphanumeric(10);
-        this.matricula = RandomStringUtils.randomNumeric(4) + " " + 
-                RandomStringUtils.randomAlphabetic(3);
+        this.matricula = RandomStringUtils.randomNumeric(4) + " "
+                + RandomStringUtils.randomAlphabetic(3);
         this.color = Color.getAleatorio();
         this.modelo = Modelo.getAleatorio();
     }
@@ -88,8 +88,6 @@ public class Vehiculo {
         return hash;
     }
 
-
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -119,15 +117,10 @@ public class Vehiculo {
         }
         return this.modelo == other.modelo;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Vehiculo{" + "bastidor=" + bastidor + ", matricula=" + matricula + ", color=" + color + ", modelo=" + modelo + ", disponible=" + disponible + ", tarifa=" + tarifa + '}';
     }
-    
-    
-    
-    
+
 }

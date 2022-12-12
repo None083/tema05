@@ -4,6 +4,8 @@
  */
 package arrays;
 
+import java.util.Arrays;
+
 /**
  *
  * @author noelia
@@ -19,7 +21,7 @@ public class CatalogoVehiculos {
         tamanio = Math.abs(tamanio);
         this.numeroVehiculos = tamanio;
         this.listaVehiculos = new Vehiculo[tamanio];
-        //una vez creada la estructura de fdatos le doy
+        //una vez creada la estructura de datos le doy
         //valor a cada elemento
         for (int i = 0; i < listaVehiculos.length; i++) {
             this.listaVehiculos[i] = new Vehiculo();
@@ -31,18 +33,36 @@ public class CatalogoVehiculos {
             System.out.println(v);
         }
     }
+    
+    public String toString(){
+      String tmp = "";
+        for (Vehiculo v : listaVehiculos) {
+            tmp+= v.toString() + "\n";
+        }
+        return tmp;
+    }
 
+    //nº de vehiculos que hay en el catalogo, no el tamaño del array
     public int getNumeroVehiculos() {
         return numeroVehiculos;
     }
     
-    public void borrarVehiculo(Vehiculo v){
+    public boolean borrarVehiculo(Vehiculo v){
         int pos = buscarVehiculo(v);
         if (pos >= 0) {
             this.listaVehiculos[pos] = null;
+            this.numeroVehiculos--;
+            return true;
         }
+        return false;
     }
     
+    public void copiarVehiculo(Vehiculo v){
+        int pos = buscarVehiculo(v);
+        
+    }
+    
+    //busqueda secuencial
     public int buscarVehiculo(Vehiculo v){
         for (int i = 0; i < this.listaVehiculos.length; i++) {
             if (v.equals(this.listaVehiculos[i])) {
@@ -51,10 +71,28 @@ public class CatalogoVehiculos {
         }
         return -1;
     }
-
-    public Vehiculo[] getListaVehiculos() {
-        return listaVehiculos;
+    
+    public void anadirVehiculo(Vehiculo v){
+        //si hay hueco se inserta en elhueco
+        if (this.numeroVehiculos < this.listaVehiculos.length){
+            for (int i = 0; i < this.listaVehiculos.length; i++) {
+                if(this.listaVehiculos[i] == null){
+                    this.listaVehiculos[i] = v;
+                    this.numeroVehiculos++;
+                    System.out.println("guardando vehiculo en posicion " + i);
+                    break;
+                }
+            }
+        } else{//el array está lleno
+            //Vehiculo[] nuevo = Arrays.copyOf(listaVehiculos, ++this.numeroVehiculos);
+            this.listaVehiculos = Arrays.copyOf(listaVehiculos, ++this.numeroVehiculos);
+            this.listaVehiculos[this.numeroVehiculos-1] = v;
+        }
     }
+
+//    public Vehiculo[] getListaVehiculos() {
+//        return listaVehiculos;
+//    }
     
     
     

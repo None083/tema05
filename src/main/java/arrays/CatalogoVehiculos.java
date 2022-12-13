@@ -57,9 +57,14 @@ public class CatalogoVehiculos {
         return false;
     }
     
-    public void copiarVehiculo(Vehiculo v){
-        int pos = buscarVehiculo(v);
-        
+    public Vehiculo copiarVehiculo(Vehiculo v){
+        Vehiculo copia = new Vehiculo();
+        copia.setBastidor(v.getBastidor());
+        copia.setColor(v.getColor());
+        copia.setMatricula(v.getMatricula());
+        copia.setModelo(v.getModelo());
+        copia.setTarifa(v.getTarifa());
+        return copia;
     }
     
     //busqueda secuencial

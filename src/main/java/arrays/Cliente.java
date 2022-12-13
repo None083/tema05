@@ -16,6 +16,11 @@ public class Cliente {
     private String NIF;
     private String apellido;
 
+    public Cliente() {
+    }
+    
+    
+
     public Cliente(String nombre, String apellido) {
 
         this.nombre = nombre;
@@ -44,6 +49,17 @@ public class Cliente {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public void setNIF(String NIF) {
+        this.NIF = NIF;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombre=" + nombre + ", NIF=" + NIF + ", apellido=" + apellido + '}';
     }
     
     

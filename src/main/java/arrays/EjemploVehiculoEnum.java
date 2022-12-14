@@ -40,6 +40,13 @@ public class EjemploVehiculoEnum {
         System.out.println("nº de vehiculos del catalogo " + catalogo.getNumeroVehiculos());
         System.out.println(catalogo);
         
+        
+        CatalogoClientes catalogo2 = new CatalogoClientes(10);
+        System.out.println("nº de clientes del catalogo " + catalogo2.getNumeroClientes());
+        System.out.println(catalogo2);
+        
+        
+        
 //        Modelo aleatorio = Modelo.getAleatorio();
 //        System.out.println("El modelo aleatorio es: " + aleatorio.getModelo());
 //        System.out.println("Color: " + Color.getAleatorio());

@@ -7,16 +7,6 @@ package arrays;
 import java.time.LocalDate;
 
 /**
- * clase empresa
- * cif
- * nombre
- * tiene catalogo vehiculos, catalogo clientes, catalogo alquileres
- * metodos----
- * registrar cliente
- * registrar vehiculos
- * buscar un cliente a partir del nif
- * buscar vehiculo a partir del bastidor
- * to string tocho con cif, nombre y los catalogos
  *
  * @author noelia
  */
@@ -26,14 +16,13 @@ public class AlquilerVehiculos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         CatalogoVehiculos catV = new CatalogoVehiculos(5);
         CatalogoClientes catC = new CatalogoClientes(5);
-        
-        
+
         Cliente c = catC.buscarCliente("3");
         Vehiculo v = catV.buscarVehiculo("4");
-        
+
         System.out.println(c);
         System.out.println(v);
         Alquiler a = new Alquiler(c, v, LocalDate.now(), 8);
@@ -42,7 +31,7 @@ public class AlquilerVehiculos {
         ca.anadirAlquiler(a);
         System.out.println("Lista Alquileres");
         System.out.println(ca);
-        
+
     }
-    
+
 }

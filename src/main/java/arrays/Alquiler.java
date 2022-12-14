@@ -11,13 +11,13 @@ import java.time.LocalDate;
  * @author noelia
  */
 public class Alquiler {
-    
+
     private int alquilerID;
     private Cliente cliente;
     private Vehiculo vehiculo;
     private LocalDate fechaInicio;
     private int duracionDias;
-    
+
     private static int contador;
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo, LocalDate fechaInicio, int duracionDias) {
@@ -31,7 +31,6 @@ public class Alquiler {
 
     public Alquiler() {
     }
-    
 
     public int getDuracionDias() {
         return duracionDias;
@@ -85,7 +84,5 @@ public class Alquiler {
         sb.append('}');
         return sb.toString();
     }
-    
-    
-    
+
 }

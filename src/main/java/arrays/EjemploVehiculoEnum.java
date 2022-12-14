@@ -14,39 +14,36 @@ public class EjemploVehiculoEnum {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         CatalogoVehiculos catalogo = new CatalogoVehiculos(10);
         System.out.println("nº de vehiculos del catalogo " + catalogo.getNumeroVehiculos());
         System.out.println(catalogo);
-        
+
 //        Vehiculo[] array = catalogo.getListaVehiculos();
 //        catalogo.borrarVehiculo(catalogo.getListaVehiculos()[3]);
         System.out.println("----------------Después de borrar el de la posicion 3----------------");
         System.out.println("nº de vehiculos del catalogo " + catalogo.getNumeroVehiculos());
         System.out.println(catalogo);
-        
+
         Vehiculo aux = new Vehiculo();
         aux.setBastidor("12344321");
         catalogo.anadirVehiculo(aux);
-        
+
         System.out.println("----------------Después de borrar el de la posicion 3----------------");
         System.out.println("nº de vehiculos del catalogo " + catalogo.getNumeroVehiculos());
         System.out.println(catalogo);
-        
+
         aux.setBastidor("99999999999");
         catalogo.anadirVehiculo(aux);
-        
+
         System.out.println("----------------Después de borrar el de la posicion 3----------------");
         System.out.println("nº de vehiculos del catalogo " + catalogo.getNumeroVehiculos());
         System.out.println(catalogo);
-        
-        
+
         CatalogoClientes catalogo2 = new CatalogoClientes(10);
         System.out.println("nº de clientes del catalogo " + catalogo2.getNumeroClientes());
         System.out.println(catalogo2);
-        
-        
-        
+
 //        Modelo aleatorio = Modelo.getAleatorio();
 //        System.out.println("El modelo aleatorio es: " + aleatorio.getModelo());
 //        System.out.println("Color: " + Color.getAleatorio());
@@ -69,8 +66,6 @@ public class EjemploVehiculoEnum {
 //        catalogo.borrarVehiculo(catalogo.getListaVehiculos()[4]);
 //        System.out.println("-------------------------------------");
 //        catalogo.mostrarCatalogo();
-        
-        
     }
-    
+
 }

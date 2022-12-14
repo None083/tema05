@@ -12,28 +12,28 @@ import java.util.Arrays;
  * @author noelia
  */
 public class CatalogoAlquileres {
-
+    
     private int numeroAlquileres;
     private Alquiler[] listaAlquileres;
-
+    
     public CatalogoAlquileres(int tamanio) {
-
+        
         tamanio = Math.abs(tamanio);
         this.numeroAlquileres = tamanio;
         this.listaAlquileres = new Alquiler[tamanio];
-
+        
         for (int i = 0; i < listaAlquileres.length; i++) {
             this.listaAlquileres[i] = new Alquiler();
         }
-
+        
     }
-
+    
     public void mostrarCatalogo() {
         for (Alquiler a : listaAlquileres) {
             System.out.println(a);
         }
     }
-
+    
     public String toString() {
         String tmp = "";
         for (int i = 0; i < listaAlquileres.length; i++) {
@@ -41,11 +41,11 @@ public class CatalogoAlquileres {
         }
         return tmp;
     }
-
+    
     public int getNumeroAlquileres() {
         return numeroAlquileres;
     }
-
+    
     public boolean borrarAlquiler(Alquiler a) {
         int pos = buscarAlquiler(a);
         if (pos >= 0) {
@@ -55,25 +55,29 @@ public class CatalogoAlquileres {
         }
         return false;
     }
-
+    
     public Alquiler copiarAlquiler(Alquiler a) {
         Alquiler copia = new Alquiler();
-        //hacer
+        copia.setAlquilerID(a.getAlquilerID());
+        copia.setCliente(a.getCliente());
+        copia.setDuracionDias(a.getDuracionDias());
+        copia.setFechaInicio(a.getFechaInicio());
+        copia.setVehiculo(a.getVehiculo());
         return copia;
     }
-
+    
     private int buscarAlquiler(Alquiler a) {
-        if (a != null){
+        if (a != null) {
             for (int i = 0; i < this.listaAlquileres.length; i++) {
                 if (a.equals(this.listaAlquileres[i] != null && a.equals(this.listaAlquileres[i]))) {
                     return i;
                 }
-            }    
+            }            
         }
         
         return -1;
     }
-
+    
     public void anadirAlquiler(Alquiler a) {
         if (this.numeroAlquileres < this.listaAlquileres.length) {
             for (int i = 0; i < this.listaAlquileres.length; i++) {
@@ -89,7 +93,7 @@ public class CatalogoAlquileres {
             this.listaAlquileres[this.numeroAlquileres - 1] = a;
         }
     }
-
+    
     public Alquiler buscarAlquiler(int ID) {
         //crea un cliente con datos aleatorios
         Alquiler aux = new Alquiler();
@@ -97,5 +101,5 @@ public class CatalogoAlquileres {
         int posicion = buscarAlquiler(aux);
         return (posicion >= 0) ? this.listaAlquileres[posicion] : null;
     }
-
+    
 }

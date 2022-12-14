@@ -65,14 +65,14 @@ public class CatalogoClientes {
     }
 
     private int buscarCliente(Cliente c) {
-        if (c != null){
+        if (c != null) {
             for (int i = 0; i < this.listaClientes.length; i++) {
                 if (c.equals(this.listaClientes[i] != null && c.equals(this.listaClientes[i]))) {
                     return i;
                 }
-            }    
+            }
         }
-        
+
         return -1;
     }
 

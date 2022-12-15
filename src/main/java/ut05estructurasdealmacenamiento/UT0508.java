@@ -4,6 +4,8 @@
  */
 package ut05estructurasdealmacenamiento;
 
+import java.util.Scanner;
+
 /**
  *
  * @author noelia
@@ -20,12 +22,27 @@ public class UT0508 {
      * *****
      * ****
      * ***
-     * **
+     * ** 
      */
     public static void main(String[] args) {
-            
-        int numero = 8;
+        
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce el tamaño del array");
+        int numero = teclado.nextInt();
         int[] array = new int[numero];
+        
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Introduzca un numero para la posición " + i);
+            array[i] = teclado.nextInt();
+        }
+        
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i]; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        
         
     }
     

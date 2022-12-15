@@ -4,6 +4,8 @@
  */
 package arrays;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author noelia
@@ -14,7 +16,16 @@ public class EjemplosEmpresa {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Empresa empresa1 = new Empresa();
+        Cliente cliente1 = new Cliente("Noelia", "Pérez");
+        //Alquiler alquiler1 = new Alquiler(cliente1, vehiculo, LocalDate.MIN, 0);
+        empresa1.registrarCliente(cliente1);
+        System.out.println(empresa1.mostrarAlquiler());
+        System.out.println(empresa1.mostrarCliente());
+        System.out.println(empresa1.mostrarVehiculo());
+        
+        
     }
     
 }

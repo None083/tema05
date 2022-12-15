@@ -132,8 +132,20 @@ public class Empresa {
         if(this.catalogoAlquiler.buscarAlquiler(a.getAlquilerID())!=null){
             a.getVehiculo().setDisponible(true);
         }
-
     }
+    
+    public String mostrarAlquiler(){
+        return this.catalogoAlquiler.toString();
+    }
+    
+    public String mostrarCliente(){
+        return this.catalogoCliente.toString();
+    }
+    
+    public String mostrarVehiculo(){
+        return this.catalogoVehiculo.toString();
+    }
+    
 
     @Override
     public String toString() {

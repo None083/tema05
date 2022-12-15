@@ -30,6 +30,10 @@ public class Alquiler {
     }
 
     public Alquiler() {
+        this.cliente = new Cliente();
+        this.vehiculo = new Vehiculo();
+        contador++;
+        this.alquilerID = contador;
     }
 
     public int getDuracionDias() {

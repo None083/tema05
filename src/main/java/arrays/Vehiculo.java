@@ -27,6 +27,7 @@ public class Vehiculo {
                 + RandomStringUtils.randomAlphabetic(3);
         this.color = Color.getAleatorio();
         this.modelo = Modelo.getAleatorio();
+        this.disponible = true;
     }
 
     public String getBastidor() {

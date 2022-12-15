@@ -34,6 +34,7 @@ public class CatalogoAlquileres {
         }
     }
     
+    @Override
     public String toString() {
         String tmp = "";
         for (int i = 0; i < listaAlquileres.length; i++) {

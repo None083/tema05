@@ -4,6 +4,8 @@
  */
 package arrays;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -16,6 +18,8 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * to string tocho con cif, nombre y los catalogos
  *
+ * registrar alquiler(fecha, nº dias)
+ * recibir vehiculo(alquiler) pone el coche que estaba alquilado como disponible
  * @author noelia
  */
 public class Empresa {
@@ -107,6 +111,14 @@ public class Empresa {
 
     public Vehiculo buscarVehiculo(String bastidor){
         return this.catalogoVehiculo.buscarVehiculo(bastidor);
+    }
+    
+    public void registrarAlquiler(Alquiler a){
+        this.catalogoAlquiler.anadirAlquiler(a);
+    }
+    
+    public void recibirVehiculo(Alquiler a){
+        
     }
 
     @Override

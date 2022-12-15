@@ -18,7 +18,7 @@ public class Alquiler {
     private LocalDate fechaInicio;
     private int duracionDias;
 
-    private static int contador;
+    private static int contador = 0;
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo, LocalDate fechaInicio, int duracionDias) {
         this.cliente = cliente;

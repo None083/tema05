@@ -18,8 +18,11 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * to string tocho con cif, nombre y los catalogos
  *
- * registrar alquiler(fecha, nº dias)
- * recibir vehiculo(alquiler) pone el coche que estaba alquilado como disponible
+ * registrar alquiler(fecha, nº dias) recibir vehiculo(alquiler) pone el coche
+ * que estaba alquilado como disponible
+ *
+ * mostrar vehiculo, alquiler, cliente,
+ *
  * @author noelia
  */
 public class Empresa {
@@ -109,16 +112,27 @@ public class Empresa {
         return this.catalogoCliente.buscarCliente(nif);
     }
 
-    public Vehiculo buscarVehiculo(String bastidor){
+    public Vehiculo buscarVehiculo(String bastidor) {
         return this.catalogoVehiculo.buscarVehiculo(bastidor);
     }
-    
-    public void registrarAlquiler(Alquiler a){
-        this.catalogoAlquiler.anadirAlquiler(a);
+
+    public boolean registrarAlquiler(LocalDate fecha, int numeroDias, String nif, String bastidor) {
+        Cliente auxCli = this.catalogoCliente.buscarCliente(nif);
+        Vehiculo auxVe = this.catalogoVehiculo.buscarVehiculo(bastidor);
+        if (auxCli != null && auxVe != null && auxVe.isDisponible() == true) {
+            this.catalogoAlquiler.anadirAlquiler(new Alquiler(auxCli, 
+                    auxVe, fecha, numeroDias));
+            auxVe.setDisponible(false);
+            return true;
+        }
+        return false;
     }
-    
-    public void recibirVehiculo(Alquiler a){
-        
+
+    public void recibirVehiculo(Alquiler a) {
+        if(this.catalogoAlquiler.buscarAlquiler(a.getAlquilerID())!=null){
+            a.getVehiculo().setDisponible(true);
+        }
+
     }
 
     @Override
@@ -155,7 +169,5 @@ public class Empresa {
         final Empresa other = (Empresa) obj;
         return Objects.equals(this.cif, other.cif);
     }
-    
-    
-    
+
 }

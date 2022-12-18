@@ -30,6 +30,10 @@ public class UT0515 {
      */
     public static void main(String[] args) {
         
+        LanzarMoneda lanzamiento = new LanzarMoneda();
+        System.out.println("Numero de caras: " + lanzamiento.cuantasCaras());
+        System.out.println("Numero de cruces: " + lanzamiento.cuantasCruces());
+        lanzamiento.mostrarResultado();
         
 
     }

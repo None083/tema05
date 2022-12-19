@@ -42,6 +42,7 @@ public class UT0523 {
         for (int i = 0; i < tamanio; i++) {
             lista1.add(aleatorio.nextInt(100-50+1)+50);
         }
+        
         ArrayList<Integer> lista2 = new ArrayList<>();
         tamanio = aleatorio.nextInt(20-10+1)+10;
         for (int i = 0; i < tamanio; i++) {

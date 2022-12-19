@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  *
- * @author 34616
+ * @author FX506
  */
 public class LanzarMoneda {
 

@@ -68,5 +68,7 @@ public class CatalogoAlquileres {
         int posicion = buscarAlquiler(aux);
         return (posicion >= 0) ? this.lista.get(posicion) : null;
     }
+    
+    
 
 }

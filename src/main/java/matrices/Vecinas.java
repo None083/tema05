@@ -19,7 +19,7 @@ public class Vecinas {
     public static void main(String[] args) {
 
         Random random = new Random();
-        int[][] matriz1 = new int[3][3];
+        int[][] matriz1 = new int[4][4];
 
         for (int i = 0; i < matriz1.length; i++) {
             for (int j = 0; j < matriz1[i].length; j++) {

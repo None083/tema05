@@ -34,12 +34,12 @@ public class OrdenacionBusqueda {
         //mediante una lamda)
         Comparator<Pais> criterioSuperficie = (p1,p2)->Long.compare(p1.getSuperficie(), p2.getSuperficie());
         Comparator<Pais> criterioPoblacion = (p1,p2)->Long.compare(p1.getPoblacion(), p2.getPoblacion());
-        Comparator<Pais> criterioNombre = (p1,p2)->p1.getNombre(p1.getNombre(), p2.getNombre());
+        //Comparator<Pais> criterioNombre = (p1,p2)->p1.getNombre(p1.getNombre(), p2.getNombre());
         Collections.sort(paises, criterioSuperficie);
         System.out.println("--------------------------------------------------");
         paises.forEach(System.out::println);
         
-        Collections.sort(paises, criterioSuperficie.thenComparing(criterioNombre));
+        //Collections.sort(paises, criterioSuperficie.thenComparing(criterioNombre));
         System.out.println("--------------------------------------------------");
         paises.forEach(System.out::println);
         

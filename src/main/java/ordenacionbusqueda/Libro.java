@@ -18,22 +18,18 @@ public class Libro implements Comparable<Libro>{
     private String ISBN;
     private String categoría;
     private String autor;
-    private String color;
     private static int contador = 0;
 
-    public Libro(String nombre, String categoría, String autor, String color) {
+    public Libro(String nombre, String categoría, String autor) {
         this.nombre = nombre;
+        this.ISBN = String.valueOf(contador);
         this.categoría = categoría;
         this.autor = autor;
-        this.color = color;
-        contador++;
-        this.ISBN = String.valueOf(contador);
-        
     }
 
     public Libro() {
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -50,10 +46,6 @@ public class Libro implements Comparable<Libro>{
         return autor;
     }
 
-    public String getColor() {
-        return color;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -66,23 +58,19 @@ public class Libro implements Comparable<Libro>{
         this.autor = autor;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     @Override
     public String toString() {
-        return "Libro{" + "nombre=" + nombre + ", ISBN=" + ISBN + ", categor\u00eda=" + categoría + ", autor=" + autor + ", color=" + color + '}';
+        return "Libro{" + "nombre=" + nombre + ", ISBN=" + ISBN + ", categor\u00eda=" + categoría + ", autor=" + autor + '}';
     }
 
+    
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 31 * hash + Objects.hashCode(this.nombre);
-        hash = 31 * hash + Objects.hashCode(this.ISBN);
-        hash = 31 * hash + Objects.hashCode(this.categoría);
-        hash = 31 * hash + Objects.hashCode(this.autor);
-        hash = 31 * hash + Objects.hashCode(this.color);
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.nombre);
+        hash = 59 * hash + Objects.hashCode(this.ISBN);
+        hash = 59 * hash + Objects.hashCode(this.categoría);
+        hash = 59 * hash + Objects.hashCode(this.autor);
         return hash;
     }
 
@@ -107,11 +95,9 @@ public class Libro implements Comparable<Libro>{
         if (!Objects.equals(this.categoría, other.categoría)) {
             return false;
         }
-        if (!Objects.equals(this.autor, other.autor)) {
-            return false;
-        }
-        return Objects.equals(this.color, other.color);
+        return Objects.equals(this.autor, other.autor);
     }
+
 
     @Override
     public int compareTo(Libro o) {

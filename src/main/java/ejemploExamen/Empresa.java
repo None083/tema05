@@ -4,7 +4,10 @@
  */
 package ejemploExamen;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -56,6 +59,20 @@ public class Empresa {
             return null;
         }
         return array;
+    }
+    
+    public void ordenarNombre(){
+        Comparator<Trabajador> criterioNombre = (p1,p2)-> p1.getNombre().compareToIgnoreCase(p2.getNombre());
+    }
+    
+    public int buscarNombre(Trabajador t){
+        
+        int posicion;
+        t = new Trabajador();
+        t.set
+        Collections.binarySearch(listaTrabajadores, t, ordenarNombre());
+        return posicion;
+        
     }
 
 }

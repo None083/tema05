@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author FX506
  */
-public class Trabajador {
+public class Trabajador implements Comparable <Trabajador>{
 
     private String nombre;
     private String apellidos;
@@ -32,6 +32,10 @@ public class Trabajador {
         }
 
     }
+
+    public Trabajador() {
+    }
+    
 
     public Trabajador(Trabajador t) {
         this.nombre = t.getNombre();
@@ -123,6 +127,11 @@ public class Trabajador {
             return false;
         }
         return this.categoria == other.categoria;
+    }
+
+    @Override
+    public int compareTo(Trabajador o) {
+        return this.apellidos.compareToIgnoreCase(o.apellidos);
     }
     
     

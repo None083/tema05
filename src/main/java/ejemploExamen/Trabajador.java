@@ -21,7 +21,6 @@ public class Trabajador implements Comparable <Trabajador>{
     private static int sueldoBase = 1707;
 
     public Trabajador(String nombre, String apellidos, LocalDate fechaNacimiento, CategoriaEmpleado categoria) {
-
         if (fechaNacimiento.plusYears(16).isBefore(LocalDate.now())) {
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -30,13 +29,11 @@ public class Trabajador implements Comparable <Trabajador>{
         } else {
             throw new IllegalArgumentException("Edad no permitida");
         }
-
     }
 
     public Trabajador() {
     }
     
-
     public Trabajador(Trabajador t) {
         this.nombre = t.getNombre();
         this.apellidos = t.getApellidos();

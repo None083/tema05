@@ -63,16 +63,12 @@ public class Empresa {
     
     public void ordenarNombre(){
         Comparator<Trabajador> criterioNombre = (p1,p2)-> p1.getNombre().compareToIgnoreCase(p2.getNombre());
+        Collections.sort(listaTrabajadores, criterioNombre);
     }
     
     public int buscarNombre(Trabajador t){
-        
-        int posicion;
-        t = new Trabajador();
-        t.set
-        Collections.binarySearch(listaTrabajadores, t, ordenarNombre());
-        return posicion;
-        
+        this.ordenarNombre();
+        return Collections.binarySearch(listaTrabajadores, t);
     }
 
 }

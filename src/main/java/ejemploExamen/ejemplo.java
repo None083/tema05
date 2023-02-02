@@ -17,7 +17,7 @@ package ejemploExamen;
  * no se pueden reservar, con L los asientos libres y V los asientos ya reservados
  * 
  */
-public class ejemplo {
+public class Ejemplo {
     
     public static void main(String[] args) {
         Teatro t = new Teatro(5,5);

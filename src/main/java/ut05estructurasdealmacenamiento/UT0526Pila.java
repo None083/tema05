@@ -44,48 +44,58 @@ import java.util.ArrayList;
  *
  * 
  */
-public class UT0526Pila {
+public class UT0526Pila<T> {
 
-    private ArrayList<Object> pila;
-    private int tamanio = 5;
+    private ArrayList<T> pila;
+    private int tamanio;
 
-    public UT0526Pila() {
-        this.pila = new ArrayList<>();
+    public UT0526Pila(int tamanio) {
+        this.pila = new ArrayList();
+        this.tamanio = tamanio;
     }
 
-    private void apilar(Object o) {
+    private void apilar(T elemento) {
         if(this.pila.size() < this.tamanio){
-            this.pila.add(o);
+            this.pila.add(elemento);
         }
     }
-    
+   
     private void desapilar(){
         this.pila.remove(this.pila.size() - 1);
     }
-    
+   
     private boolean estaVacia(){
         return this.pila.isEmpty();
     }
-    
+   
     private boolean estaLlena(){
         return this.pila.size() >= this.tamanio;
     }
-    
+   
     private int numeroElementos(){
         return this.pila.size();
     }
-    
+   
     private void mostrarElementos(){
         for (int i = this.pila.size() - 1; i >= 0; i--) {
             System.out.println(this.pila.get(i));
         }
     }
-    
-    private void rellenar(Object[] array){
+   
+    private void rellenar(T[] array){
         for (int i = 0; i < array.length; i++) {
             this.pila.add(array[i]);
             this.tamanio = this.pila.size();
         }
+    }
+    
+    private Object[] sacarElementos(){
+        Object[] array = new Object[this.pila.size()];
+        for (int i = 0; i < this.pila.size(); i++) {
+            array[i] = this.pila.get(i);
+        }
+        this.pila.clear();
+        return array;
     }
 
 }
